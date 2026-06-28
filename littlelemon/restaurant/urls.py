@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import include, path 
 #from .views import sayHello 
 from restaurant import views
+from rest_framework.authtoken.views import obtain_auth_token
 #from rest_framework import routers
 
 #router = routers.DefaultRouter()
@@ -21,5 +22,6 @@ urlpatterns = [
     
     path('menu/items/', views.MenuItemsView.as_view()),
     path('menu/items/<int:pk>/', views.SingleMenuItemView.as_view()),
+    path('api-token-auth/', obtain_auth_token),
 ]
 
